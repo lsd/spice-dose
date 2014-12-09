@@ -1,3 +1,6 @@
+@import 'variables';
+@import 'helpers';
+
 // Main styles
 
 html {
@@ -14,7 +17,7 @@ html {
   overflow-x: hidden;
 
   .home.view {
-    background: url('/images/background/bg.jpg');
+    background: url(@background-image);
     background-size: cover;
     background-position: 50% 50%;
     background-repeat: no-repeat;
@@ -28,6 +31,8 @@ html {
       .quote {
         margin: 0;
         padding: 15vh 0.5em 1em;
+        color: @light;
+        text-shadow: 1px 1px 1px @dark;
         font-size: 1.5em;
 
         .author {
