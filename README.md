@@ -15,7 +15,7 @@ A very simple Meteor app that scrapes quotes from wikiquote and aggregates the c
 
 <!-- toc stop -->
 
-Check out the demo here: [spicedose.meteor.com](http://boilerplate.meteor.com).
+Check out the demo here: [spicedose.meteor.com](http://spicedose.meteor.com).
 
 ## How to use
 

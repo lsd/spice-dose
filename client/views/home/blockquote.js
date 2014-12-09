@@ -4,13 +4,19 @@ Template.blockquote.rendered = function() {
       console.log('error', error);
     } else {
       console.log(result);
-      Session.set('quote', result);
+      Session.set('quotes', result);
     }
   });
 }
 
 Template.blockquote.helpers({
-  quoteText: function () {
-    return Session.get('quote');
+  quotes: function () {
+    return Session.get('quotes');
+  },
+  quote: function () {
+    return '"Quote of the century is displayed here for the masses."';
+  },
+  author: function () {
+    return 'John Freeman, Fremen Raider';
   }
 });
