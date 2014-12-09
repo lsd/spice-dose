@@ -1,0 +1,58 @@
+// Main styles
+
+html {
+  height: 100%;
+
+  body {
+    height: 100%;
+  }
+}
+
+.layout {
+  position: relative;
+  min-height: 100%;
+  overflow-x: hidden;
+
+  .home.view {
+    background: url('/images/background/bg.jpg');
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    height: 100vh;
+
+    .blockquote {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+
+      .quote {
+        margin: 0;
+        padding: 15vh 0.5em 1em;
+        font-size: 1.5em;
+
+        .author {
+          display: block;
+          padding: 1em 0 0;
+          font-size: 0.5em;
+          font-weight: bold;
+
+          .tag {
+            font-weight: normal;
+            font-size: 90%;
+          }
+        }
+      }
+    }
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    p {
+      text-align: center;
+    }
+  }
+}
