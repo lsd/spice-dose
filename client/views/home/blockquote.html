@@ -1,10 +1,13 @@
 <template name="blockquote">
   <blockquote class="blockquote">
-    <p class="quote">
+    <p class="quote text">
+      <i class="quote left icon"></i>
       {{ quote }}
+      <i class="quote right icon"></i>
       <span class="author">
         {{ author }}
       </span>
     </p>
+    {{> action}}
   </blockquote>
 </template>

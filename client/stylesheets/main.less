@@ -8,6 +8,26 @@ html {
 
   body {
     height: 100%;
+
+    /* buttons */
+    .ui.basic.button {
+      background: rgba(199, 215, 236, 0.15) !important;
+      color: #C7D7EC !important;
+      text-shadow: 1px 1px 1px #233B52;
+      -moz-box-shadow: 0px 0px 0px 1px rgba(199, 215, 236, 0.75) inset;
+      -webkit-box-shadow: 0px 0px 0px 1px rgba(199, 215, 236, 0.75) inset;
+      box-shadow: 0px 0px 0px 1px rgba(199, 215, 236, 0.75) inset;
+
+      &:hover,
+      &:focus {
+        background: rgba(199, 215, 236, 0.3) !important;
+        color: #A0C8FC !important;
+        text-shadow: 1px 1px 1px #132A3F;
+        -moz-box-shadow: 0px 0px 0px 1px #A0C8FC inset;
+        -webkit-box-shadow: 0px 0px 0px 1px #A0C8FC inset;
+        box-shadow: 0px 0px 0px 1px #A0C8FC inset;
+      }
+    }
   }
 }
 
@@ -28,12 +48,18 @@ html {
       padding: 0;
       height: 100vh;
 
-      .quote {
+      .quote.text {
         margin: 0;
-        padding: 15vh 0.5em 1em;
+        padding: 15vh 0.5em;
         color: @light;
         text-shadow: 1px 1px 1px @dark;
         font-size: 1.5em;
+
+        .quote.icon {
+          padding: 0;
+          margin: 0;
+          font-size: 1em;
+        }
 
         .author {
           display: block;
