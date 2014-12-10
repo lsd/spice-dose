@@ -6,12 +6,21 @@ Meteor.startup(function () {
       result = Meteor.http.get('http://en.wikiquote.org/wiki/Dune');
       content = cheerio.load(result.content);
 
+      /*
       var quotes = content('#mw-content-text ul li').text();
       return quotes;
+      */
 
+      var item = content('#mw-content-text ul li');
+
+      if (Quotes.find().count() === 0) {
+        for (var i = 0; i < item.length; i++) {
+          var quoteText = item[i].innerHTML;
+          Quotes.insert({ quote: quoteText });
+        }
+      };
 
       /*
-
       var a = ["a", "b", "c"];
         a.forEach(function(entry) {
         console.log(entry);
