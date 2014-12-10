@@ -16,22 +16,10 @@ Meteor.startup(function () {
       if (Quotes.find().count() === 0) {
         for (var i = 0; i < item.length; i++) {
           var quoteText = item[i].innerHTML;
+          console.log(quoteText);
           Quotes.insert({ quote: quoteText });
         }
-      };
-
-      /*
-      var a = ["a", "b", "c"];
-        a.forEach(function(entry) {
-        console.log(entry);
-      });
-
-      var items = content('#mw-content-text ul li');
-      items.forEach(function(item) {
-        console.log(item);
-        return item.text();
-      });
-      */
+      }
 
       /*
       var items = content('#mw-content-text ul');
