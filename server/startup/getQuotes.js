@@ -4,11 +4,46 @@ Meteor.startup(function () {
   Meteor.methods({
     getQuotes: function () {
       result = Meteor.http.get('http://en.wikiquote.org/wiki/Dune');
-      $ = cheerio.load(result.content);
-      //var body = $('#mw-content-text ul li').not('.toclevel-1').not( '.toclevel-2').not('.toclevel-3').text();
+      content = cheerio.load(result.content);
 
-      var quotes = $('#mw-content-text ul li').text();
+      var quotes = content('#mw-content-text ul li').text();
       return quotes;
+
+
+      /*
+
+      var a = ["a", "b", "c"];
+        a.forEach(function(entry) {
+        console.log(entry);
+      });
+
+      var items = content('#mw-content-text ul li');
+      items.forEach(function(item) {
+        console.log(item);
+        return item.text();
+      });
+      */
+
+      /*
+      var items = content('#mw-content-text ul');
+      var item = content('#mw-content-text ul li');
+
+      _.each(items, function(item) {
+        if ($(item).hasClass('toclevel-1')) {
+          $(this).remove();
+        } else {
+          return $(item).text();
+        }
+      });
+
+      $(items).each(function() {
+        if ( $(this).hasClass('toclevel-1') ) {
+          $(this).remove();
+        } else {
+          return $(this).text();
+        }
+      });
+      */
     }
   });
 
