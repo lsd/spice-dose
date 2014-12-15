@@ -4,26 +4,44 @@ Meteor.startup(function () {
   Meteor.methods({
     getQuotes: function () {
       result = Meteor.http.get('http://en.wikiquote.org/wiki/Dune');
-      content = cheerio.load(result.content);
+      $ = cheerio.load(result.content);
 
       /*
-      var quotes = content('#mw-content-text ul li').text();
+      var quotes = $('#mw-content-text ul li').text();
       return quotes;
       */
 
-      var item = content('#mw-content-text ul li');
+      var item = $('#mw-content-text ul li');
 
-      if (Quotes.find().count() === 0) {
-        for (var i = 0; i < item.length; i++) {
-          var quoteText = item[i].innerHTML;
+      //  var test = $('#mw-content-text ul li').hasClass('toclevel-1');
+
+      /*
+      _.each(item, function(item) {
+        if (this.hasClass('toclevel-1')) {
+          this.remove();
+        } else {
+          var quoteText = this.text();
           console.log(quoteText);
           Quotes.insert({ quote: quoteText });
         }
-      }
-
+      });
+      */
       /*
-      var items = content('#mw-content-text ul');
-      var item = content('#mw-content-text ul li');
+      if (Quotes.find().count() === 0) {
+        for (var i = 0; i < item.length; i++) {
+          if (item.hasClass('toclevel-1')) {
+            $(this).remove();
+          } else {
+            var quoteText = item[i].text();
+            console.log(quoteText);
+            Quotes.insert({ quote: quoteText });
+          }
+        }
+      }
+      */
+      /*
+      var items = $('#mw-content-text ul');
+      var item = $('#mw-content-text ul li');
 
       _.each(items, function(item) {
         if ($(item).hasClass('toclevel-1')) {
