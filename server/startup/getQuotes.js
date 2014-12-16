@@ -10,8 +10,13 @@ Meteor.startup(function () {
       var quotes = $('#mw-content-text ul li').text();
       return quotes;
       */
+      //*[@id="mw-content-text"]/ul[1]/li
 
-      var item = $('#mw-content-text ul li');
+      var items = $('#mw-content-text ul li');
+    //  console.log(item.text());
+      _.each(items, function(item) {
+          console.log(item.data);
+        });
 
       //  var test = $('#mw-content-text ul li').hasClass('toclevel-1');
 
