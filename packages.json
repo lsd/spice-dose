@@ -1,3 +1,45 @@
 {
-  "cheerio": "0.15.0"
+  "name": "To fathom Hell or soar angelic, just take a pinch of Spice",
+  "version": "0.0.0",
+  "description": "Scholar",
+  "main": "index.js",
+   "keywords": [
+    "dune", "meteor"
+  ],
+  "author": "Damir The Impalor",
+  "license": "private property of big D.",
+  "bugs": {
+    "url": "https://github.com/amazingBastard/spice-dose/issues"
+  },
+  "homepage": "https://github.com/amazingBastard/spice-dose",
+  "private": true,
+  "dependencies": {
+      "cheerio": "0.15.0"
+  },
+  "devDependencies": {
+    "gulp": "3.8.8",
+    "gulp-eslint": "0.1.8",
+    "gulp-jscs": "1.2.1",
+    "jscs": "1.7.3",
+    "gulp-livereload": "2.1.0",
+    "gulp-minify-css": "0.3.7",
+    "gulp-ruby-sass": "0.7.1",
+    "gulp-scss-lint": "0.1.1",
+    "gulp-uglify": "0.3.1",
+    "gulp-watch": "0.6.8",
+    "karma": "0.12.8",
+    "karma-mocha": "0.1.6",
+    "karma-phantomjs-launcher": "0.1.4",
+    "mocha": "1.20.1",
+    "phantomjs": "1.9.7-15"
+  },
+  "scripts": {
+    "test": "karma start karma.conf.js",
+    "test-once": "karma start karma.conf.js --single-run",
+    "bootstrap": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/easybib/scholar.git"
+  }
 }
