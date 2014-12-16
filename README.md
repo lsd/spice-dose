@@ -1,8 +1,6 @@
 # Spice Dose - Random Dune Quotes
 
-A very simple Meteor app that scrapes quotes from wikiquote and aggregates the content on the client/server.
-
-<!-- toc -->
+Simple Meteor app to scrape and aggregate Dune content from wikiquote on client/server
 
 * [How to use](#how-to-use)
   * [Deployments](#deployments)
@@ -13,15 +11,21 @@ A very simple Meteor app that scrapes quotes from wikiquote and aggregates the c
   * [Folder structure](#folder-structure)
 * [License](#license)
 
-<!-- toc stop -->
+**demo here[spicedose.meteor.com](http://spicedose.meteor.com)**
 
-Check out the demo here: [spicedose.meteor.com](http://spicedose.meteor.com).
+## Requirements
 
-## How to use
+Make sure [Meteor is installed and up to date](https://www.meteor.com/install) or run:
 
 ```sh
-# Assuming meteor is already installed
-cd appName && meteor
+curl https://install.meteor.com/ | sh
+```
+
+## Installatian
+```sh
+git clone git@github.com:amazingBastard/spice-dose.git
+cd spice-dose
+meteor
 ```
 
 ### Deployments
@@ -33,11 +37,11 @@ Have a look at the repository for more information.
 
 > Meteor can not do SEO
 
-This statement is only partially true, since there is a package called [ms-seo](https://github.com/DerMambo/ms-seo), which
-has a lot of neat little tricks to help web crawlers notice your app the way you want them to. This also adds constants under
-__client/lib/constants.js__ for the app. Change SEO settings in the routes like that.
+This statement is not SEO friendly out of the box. See [ms-seo](https://github.com/DerMambo/ms-seo), which  
+has help crawlers notice the app much like native HTML. This also adds constants under  
+__client/lib/constants.js__ for the app. Change SEO settings in the routes like that.  
 
-```javascript
+```js
 Router.route('/about', function () {
   this.render('about');
   // Using the app constants
@@ -51,7 +55,7 @@ The [browser-policy](https://atmospherejs.com/meteor/browser-policy) adds rules 
 This helps dealing with clickjacking and other XSS methods used to attack the client. To whitelist a url, add following to
 __server/config/security.js__
 
-```javascript
+```js
 BrowserPolicy.content.allowOriginForAll(YOUR_URL);
 ```
 
@@ -62,56 +66,56 @@ Other security enforcing packages like [audit-argument-checks](https://docs.mete
 
 ### Packages used
 
-* Meteor Core
-  * standard-app-packages
-* Routing
-  * iron:router
-  * zimme:iron-router-active
-* Collections
-  * aldeed:collection2
-  * dburles:collection-helpers
-* Accounts
-  * accounts-password
-  * useraccounts:semantic-ui
-* UI and UX
-  * fastclick
-  * meteorhacks:fast-render
-  * natestrauser:animate-css
-  * nooitaf:semantic-ui-less
-* Security
-  * browser-policy
-  * audit-argument-checks
-  * matteodem:easy-security
-* SEO
-  * manuelschoebel:ms-seo
-* Development
-  * less
-  * jquery
-  * underscore
-  * raix:handlebar-helpers
-  * http
-  * meteorhacks:npm
+- Meteor Core
+  - standard-app-packages
+- Routing
+  - iron:router
+  - zimme:iron-router-active
+- Collections
+  - aldeed:collection2
+  - dburles:collection-helpers
+- Accounts
+  - accounts-password
+  - useraccounts:semantic-ui
+- UI and UX
+  - fastclick
+  - meteorhacks:fast-render
+  - natestrauser:animate-css
+  - nooitaf:semantic-ui-less
+- Security
+  - browser-policy
+  - audit-argument-checks
+  - matteodem:easy-security
+- SEO
+  - manuelschoebel:ms-seo
+- Development
+  - less
+  - jquery
+  - underscore
+  - raix:handlebar-helpers
+  - http
+  - meteorhacks:npm
 
 The "insecure" and "autopublish" packages are removed by default (they make your app vulnerable).
 
 ### Folder structure
 
 ```
-client/ 				# Client folder
+client/         # Client folder
     compatibility/      # Libraries which create a global variable
     config/             # Configuration files (on the client)
-	lib/                # Library files that get executed first
+  lib/                # Library files that get executed first
     startup/            # Javascript files on Meteor.startup()
     stylesheets         # LESS files
     modules/            # Meant for components, such as form and more(*)
-	views/			    # Contains all views(*)
-	    common/         # General purpose html templates
-models/  				# Model files, for each Meteor.Collection(*)
-packages/  			# NPM Packages
+  views/          # Contains all views(*)
+      common/         # General purpose html templates
+models/          # Model files, for each Meteor.Collection(*)
+packages/        # NPM Packages
 private/                # Private files
 public/                 # Public files
 routes/                 # All routes(*)
-server/					# Server folder
+server/          # Server folder
     fixtures/           # Meteor.Collection fixtures defined
     lib/                # Server side library folder
     publications/       # Collection publications(*)
@@ -121,4 +125,4 @@ server/					# Server folder
 (*) = the command line tool creates files in these folders
 
 ## License
-This boilerplate has an MIT License, see the LICENSE.txt for more information.
+This boilerplate has an MIT License, see included <LICENSE> file
